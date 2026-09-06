@@ -4,13 +4,10 @@
 
 const std = @import("std");
 const string = []const u8;
-const Parser = @import("./Parser.zig");
+const Parser = @import("./parser.zig");
 const log = std.log.scoped(.xml);
 const tracer = @import("tracer");
 const extras = @import("extras");
-
-//
-//
 
 pub fn parse(alloc: std.mem.Allocator, path: string, inreader: anytype) !Document {
     const t = tracer.trace(@src(), "", .{});
